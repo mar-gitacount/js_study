@@ -1,0 +1,37 @@
+body{
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+table{
+    /* 隣接するボーダーを重ねて表示する。 */
+    border-collapse: collapse;
+    border:2px solid #eee;
+}
+tbody td:first-child{
+    /* 日曜日 */
+    color: red;
+}
+tbody td:last-child{
+    /* 土曜日 */
+    color: blue;
+}
+thead,
+tfoot{
+    background: #eee;
+}
+tfoot {
+    font-weight: bold;
+}
+th,
+td{
+    padding:8px;
+    text-align: center;
+}
+td.today{
+    font-weight: bold;
+}
+
+#prev,#next,#today{
+    cursor: pointer;
+    user-select: none;
+}
