@@ -22,33 +22,39 @@
         }, 10);
     }
     function setButtonStateInitial(){
-        start.disabled = false;
-        stop.disabled = true;
-        reset.disabled = true;
+        start.classList.remove('inactive');
+        stop.classList.add('inactive');
+        reset.classList.add('inactived');
     }
 
     function setButtonStateRunning(){
-        start.disabled = true;
-        stop.disabled = false;
-        reset.disabled = true;
+        start.classList.add('inactived');
+        stop.classList.remove('inactive');
+        reset.classList.add('inactive');
     }
 
     function setButtonStopped(){
-        start.disabled = false;
-        stop.disabled = true;
-        reset.disabled = false;
+        start.classList.remove('inactive');
+        stop.classList.add('inactive');
+        reset.classList.remove('inactive');
     }
 
     setButtonStateInitial();
 
 
     start.addEventListener('click', () => {
+        if (start.classList.contains('inactive') === true) {
+            return;
+        }
         setButtonStateRunning();
         startTime = Date.now();
         countUp();
     });
 
     stop.addEventListener('click', () => {
+        if (stop.classList.contains('inactive') === true) {
+            return;
+        }
         setButtonStopped();
         clearTimeout(timeoutId);
         elapsedTime += Date.now() - startTime;
@@ -56,6 +62,9 @@
     });
 
     reset.addEventListener('click', () => {
+        if (reset.classList.contains('inactive') === true) {
+            return;
+        }
         timer.textContent = '00:00.000';
         elapsedTime = 0 ;
     });
