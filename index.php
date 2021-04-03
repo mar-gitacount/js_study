@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="title">html,css,jsの勉強一覧クリックして移動可能</div>
-<?php if($handle = opendir('/Applications/MAMP/htdocs/js_study/')):?>
+<?php if($handle = opendir('../js_study/')):?>
     <?php while (false !== ($entry = readdir($handle))):?>
         <?php $checkdot = substr($entry, 0,1)?>
         <?php if(is_dir($entry)&&$checkdot !== "."):?>
