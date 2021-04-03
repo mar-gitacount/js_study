@@ -1,0 +1,13 @@
+body{
+    font-family: 'courier New', monospace;
+    font-size: 14px;
+    background: #eee;
+}
+
+.container{
+    margin: 20px auto;
+    width: 270px;
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+}
